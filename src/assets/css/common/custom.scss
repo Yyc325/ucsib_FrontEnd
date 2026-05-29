@@ -1,13 +1,54 @@
+
 :root {
-  --el-color-primary: #{$systemThemeColor} !important;
-  --el-text-color-placeholder: #{$textDropDownColor} !important;
-  --el-border-color-lighter: #{$cuttingLineColor} !important;
-  --el-text-color-primary: #{$titleText1Color} !important;
-  --el-text-color-regular: #{$titleText1Color} !important;
-  font-size: $rootFontSize;
+  --el-color-primary: #2c3e50 !important;
+  --el-text-color-placeholder: #666666 !important;
+  --el-border-color-lighter: #e5e8ef !important;
+  --el-text-color-primary: #1d2129 !important;
+  --el-text-color-regular: #1d2129 !important;
+  font-size: 14px;
   --el-font-size-base: 14px;
+  font-family: 'Lora';
+  --container-width: 1500px
 }
+
 html,
 body {
   font-size: 16px;
 }
+
+html {
+  overflow: hidden;
+}
+
+#app {
+  height: 100vh;
+}
+
+/* 定义自定义字体 */
+@font-face {
+  font-family: 'LaBelleAurore';
+  src: url('/fonts/La-Belle-Aurore/La-Belle-Aurore-1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 定义自定义字体 */
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/Lora/Lora-Medium-5.ttf') format('truetype'),
+      url('/fonts/Lora/Lora-BoldItalic-3.ttf') format('truetype'),
+      url('/fonts/Lora/Lora-Italic-4.ttf') format('truetype'),
+      url('/fonts/Lora/Lora-Bold-2.ttf') format('truetype'),
+      url('/fonts/Lora/Lora-MediumItalic-6.ttf') format('truetype'),
+      url('/fonts/Lora/Lora-Regular-7.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+///* 定义自定义字体 */
+//@font-face {
+//  font-family: 'Impact';
+//  src: url('/fonts/Impact/impact.ttf') format('truetype'),
+//  font-weight: normal;
+//  font-style: normal;
+//}

@@ -1,0 +1,191 @@
+{
+  "id": "3809335",
+  "name": "行翼云知识库",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "37076726",
+      "name": "编组 18备份 5",
+      "font_class": "stock",
+      "unicode": "e6cd",
+      "unicode_decimal": 59085
+    },
+    {
+      "icon_id": "37076714",
+      "name": "编组 5备份",
+      "font_class": "collect1",
+      "unicode": "e6cb",
+      "unicode_decimal": 59083
+    },
+    {
+      "icon_id": "37076713",
+      "name": "编组 4备份",
+      "font_class": "start1",
+      "unicode": "e6cc",
+      "unicode_decimal": 59084
+    },
+    {
+      "icon_id": "37076717",
+      "name": "编组 5备份 11",
+      "font_class": "collect",
+      "unicode": "e6c7",
+      "unicode_decimal": 59079
+    },
+    {
+      "icon_id": "37076718",
+      "name": "编组 16备份",
+      "font_class": "start",
+      "unicode": "e6c8",
+      "unicode_decimal": 59080
+    },
+    {
+      "icon_id": "37076716",
+      "name": "编组 28备份 2",
+      "font_class": "cooperate",
+      "unicode": "e6c9",
+      "unicode_decimal": 59081
+    },
+    {
+      "icon_id": "37076715",
+      "name": "编组 28备份",
+      "font_class": "cooperate1",
+      "unicode": "e6ca",
+      "unicode_decimal": 59082
+    },
+    {
+      "icon_id": "37058496",
+      "name": "编组 38",
+      "font_class": "a-bianzu38",
+      "unicode": "e6c3",
+      "unicode_decimal": 59075
+    },
+    {
+      "icon_id": "37058494",
+      "name": "编组 43",
+      "font_class": "a-bianzu43",
+      "unicode": "e6c4",
+      "unicode_decimal": 59076
+    },
+    {
+      "icon_id": "37058495",
+      "name": "编组 41",
+      "font_class": "a-bianzu41",
+      "unicode": "e6c5",
+      "unicode_decimal": 59077
+    },
+    {
+      "icon_id": "37058493",
+      "name": "编组 34",
+      "font_class": "a-bianzu34",
+      "unicode": "e6c2",
+      "unicode_decimal": 59074
+    },
+    {
+      "icon_id": "37058492",
+      "name": "编组 30",
+      "font_class": "a-bianzu30",
+      "unicode": "e6c6",
+      "unicode_decimal": 59078
+    },
+    {
+      "icon_id": "35901400",
+      "name": "收起",
+      "font_class": "shouqi",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    },
+    {
+      "icon_id": "35901401",
+      "name": "展开",
+      "font_class": "zhankai",
+      "unicode": "e6bd",
+      "unicode_decimal": 59069
+    },
+    {
+      "icon_id": "35258791",
+      "name": "添加协作",
+      "font_class": "tianjiaxiezuo",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "35258792",
+      "name": "分享",
+      "font_class": "fenxiang",
+      "unicode": "e6ae",
+      "unicode_decimal": 59054
+    },
+    {
+      "icon_id": "35090539",
+      "name": "权限",
+      "font_class": "quanxian",
+      "unicode": "e6a7",
+      "unicode_decimal": 59047
+    },
+    {
+      "icon_id": "35090137",
+      "name": "xinxi",
+      "font_class": "xinxi",
+      "unicode": "e6a6",
+      "unicode_decimal": 59046
+    },
+    {
+      "icon_id": "33232427",
+      "name": "fenzu",
+      "font_class": "fenzu",
+      "unicode": "e675",
+      "unicode_decimal": 58997
+    },
+    {
+      "icon_id": "33232430",
+      "name": "wendang",
+      "font_class": "wendang",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    },
+    {
+      "icon_id": "33232431",
+      "name": "yidongdao",
+      "font_class": "yidongdao",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "33232432",
+      "name": "mulu",
+      "font_class": "mulu",
+      "unicode": "e678",
+      "unicode_decimal": 59000
+    },
+    {
+      "icon_id": "33232433",
+      "name": "huishouzhan",
+      "font_class": "huishouzhan",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "33232434",
+      "name": "shanchu",
+      "font_class": "shanchu",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "33232599",
+      "name": "shouye",
+      "font_class": "shouye",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "33232604",
+      "name": "chongmingming",
+      "font_class": "chongmingming",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    }
+  ]
+}

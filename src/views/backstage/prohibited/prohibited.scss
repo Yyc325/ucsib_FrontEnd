@@ -1,0 +1,25 @@
+.prohibited-container{
+  :deep(.el-tabs){
+    height: 100%;
+    .el-tabs__header{
+      margin-bottom: 20px;
+      .el-tabs__nav-scroll{
+
+        padding-left: 16px;
+        .el-tabs__active-bar{
+          bottom: 6px;
+        }
+        .el-tabs__item{
+          height: auto;
+          font-size: 14px;
+          color: rgba(0,0,0,0.9);
+          line-height: 20px;
+          padding: 16px 34px 14px;
+        }
+      }
+    }
+    .el-tab-pane{
+      height: 100%;
+    }
+  }
+}

@@ -9,6 +9,8 @@ export function useUser() {
 
   // 获取用户信息
   const getUserInfo = computed(() => userStore.getUserInfo);
+  // 获取用户信息
+  const getPhone = computed(() => userStore.getPhone);
 
   // 设置 token
   function setToken(token: string | null) {
@@ -20,10 +22,17 @@ export function useUser() {
     userStore.setUserInfo(info);
   }
 
+  // 设置用户信息
+  function setPhone(phone) {
+    userStore.setPhone(phone);
+  }
+
   return {
     getToken,
     getUserInfo,
+    getPhone,
     setToken,
     setUserInfo,
+    setPhone,
   };
 }

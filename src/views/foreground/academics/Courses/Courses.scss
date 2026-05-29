@@ -1,0 +1,20 @@
+$contentWidth: 1440px;
+.course {
+  text-shadow: none;
+  .course-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $contentWidth;
+    margin: 0 auto;
+    overflow: visible;
+  }
+}
+
+@media(max-width:575.98px){
+  .course {
+    .course-container{
+      width: 90%;
+    }
+  }
+}

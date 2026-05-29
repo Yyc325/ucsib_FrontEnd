@@ -1,0 +1,22 @@
+.user-management-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .user-management-search {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+    .user-management-search-input {
+      display: flex;
+      .el-input {
+        margin-right: 16px;
+      }
+    }
+  }
+  .user-management-table {
+    flex: 1;
+    overflow: hidden;
+  }
+}

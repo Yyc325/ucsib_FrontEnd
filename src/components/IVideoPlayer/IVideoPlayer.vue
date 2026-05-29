@@ -9,5 +9,5 @@ const uploadVideo = () => {
 }
 </script>
 <style lang="sass" scoped>
-    @import './IVideoPlayer.scss'
+    @forward './IVideoPlayer.scss'
 </style>

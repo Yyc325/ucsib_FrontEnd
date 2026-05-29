@@ -1,0 +1,96 @@
+// 手机样式适配
+@media(max-width: 575.98px) {
+  .faculty-staff {
+    .faculty-staff-header {
+      display: flex;
+      flex-direction: column !important;
+      width: 100%;
+      height: auto;
+
+      .faculty-staff-header-section {
+        &.right {
+          flex: auto;
+          height: 260px;
+        }
+
+        &.left {
+          width: 100%;
+          height: 296px;
+          padding: 16px;
+
+          .faculty-staff-header-title {
+            font-size: 20px;
+            line-height: 28px;
+            margin-bottom: 10px;
+          }
+
+          .faculty-staff-header-member {
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 16px;
+          }
+
+          .faculty-staff-header-desc {
+            font-size: 12px;
+            line-height: 22px;
+            padding: 0 24px;
+            margin-bottom: 32px;
+          }
+        }
+      }
+
+    }
+
+    .faculty-staff-main {
+      min-height: auto;
+      .faculty-staff-aside {
+        width: 126px;
+        padding: 10px;
+        .faculty-staff-aside-search{
+          .faculty-staff-aside-search-btn{
+            font-size: 16px;
+            padding: 12px 0;
+            margin-bottom: 16px;
+          }
+        }
+        .faculty-staff-aside-menu{
+          .faculty-staff-aside-menu-item{
+            margin: 12px 0;
+            span{
+              font-size: 12px;
+              line-height:22px;
+            }
+          }
+        }
+      }
+
+      .faculty-staff-section {
+        .faculty-staff-main{
+          grid-template-columns: repeat(3,calc(calc(100% - 48px)/3));
+          grid-column-gap: 24px;
+          grid-row-gap: 16px;
+          padding: 32px 24px;
+          .faculty-staff-card{
+            height: 124px;
+            .faculty-staff-card-info{
+              .faculty-staff-card-name{
+                font-size: 12px;
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 较小平板屏幕适配
+@media(min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+// 平板样式适配
+@media(min-width: 768px) and (max-width: 991.98px) {
+
+}

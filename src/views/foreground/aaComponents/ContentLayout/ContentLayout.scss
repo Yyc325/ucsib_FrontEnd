@@ -1,0 +1,32 @@
+.content-layout {
+  text-shadow: none;
+
+  .content-layout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 1500px;
+    margin: 0 auto;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
+}
+
+// 手机样式适配
+@media(max-width:575.98px){
+  .content-layout{
+    .content-layout-container{
+      width: 375px;
+    }
+  }
+}
+// 较小平板屏幕适配
+@media(min-width:576px) and (max-width:767.98px){
+
+}
+// 平板样式适配
+@media(min-width:768px) and (max-width:991.98px){
+
+}

@@ -1,0 +1,113 @@
+
+// 手机样式适配
+@media (max-width:575.98px){
+  .i-layout{
+    min-width: 100%;
+    padding-top: 100px;
+    background: #fff;
+    &.is-header-image-visible{
+      padding-top: 50px;
+      .i-layout-header{
+        height: 288px !important;
+      }
+    }
+    &.is-header-hidden{
+      padding-top: 50px;
+    }
+    .i-layout-header {
+      min-height: auto !important;
+      .brand-bar{
+        .brand-bar__wrapper{
+          padding: 0 0 0 24px;
+          .menu-gateway-nav{
+            .menu-gateway-nav-container{
+              .menu{
+                display: none;
+              }
+              .search-toggle{
+                display: none;
+              }
+              .collapse-menu{
+                position: relative;
+                display: flex;
+                height: 100%;
+                padding-left: 16px;
+                padding-right: 24px;
+                .collapse-menu__trigger{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  height: 100%;
+                  i{
+                    font-size: 24px;
+                  }
+                }
+                .collapse-menu__content{
+                  position: absolute;
+                  top: 100%;
+                  right: 0;
+                  background: #000;
+                  padding: 8px;
+                  border-radius: 4px;
+                  transform: scale(0);
+                  transform-origin: 50% 0;
+                  transition: all .3s linear;
+                  &.is-active{
+                    transform: scale(1);
+                  }
+                  .collapse-menu-list{
+                    .menu-item{
+                      display: flex;
+                      align-items: center;
+                      height: 24px;
+                      padding: 0 8px;
+                      color: #fff;
+                      font-size: 12px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .menu-primary-nav-container{
+        padding:0;
+        height: 50px;
+        background-color: #000;
+        .page-meta-info{
+          display: none;
+        }
+        .menu{
+
+          .menu-item{
+            font-size: 10px;
+            white-space: nowrap;
+          }
+        }
+      }
+      .panel-collection{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:100%;
+        img{
+          width: auto;
+          height:100%;
+        }
+        .panel-collection-title{
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}
+// 较小平板屏幕适配
+@media(min-width:576px) and (max-width:767.98px){
+
+}
+
+// 平板样式适配
+@media(min-width:768px) and (max-width:991.98px){
+
+}

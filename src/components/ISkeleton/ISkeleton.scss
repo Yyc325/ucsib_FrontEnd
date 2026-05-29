@@ -1,0 +1,25 @@
+.i-skeleton {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  .i-skeleton-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .i-skeleton-header {
+      margin-bottom: 24px;
+      .i-skeleton-title {
+        margin-bottom: 16px;
+      }
+      .i-skeleton-desc {
+        color: #49576a;
+      }
+    }
+    .i-skeleton-body {
+      flex: 1;
+      overflow: hidden;
+    }
+  }
+}

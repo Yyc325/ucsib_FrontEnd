@@ -1,0 +1,119 @@
+
+// 手机样式适配
+@media(max-width:575.98px){
+  .about{
+    .about-container{
+      width: 370px;
+      .about-header{
+        border-width: 2px;
+        margin-bottom: 40px;
+        .about-header-title{
+          font-size:  30px;
+        }
+      }
+      .about-body{
+        width: 100%;
+        .about-card-list{
+          .about-card-item{
+            .about-card-item__info{
+              width: 100%;
+              height: auto;
+              padding-bottom: 10px;
+              .about-card-item__image{
+                width: 200px;
+                height: 126px;
+                padding: 0 0 10px 10px;
+                .about-card-item__image-show{
+                  width: 100%;
+                  border-width: 2px;
+                  img{
+                    width: 100%;
+                    object-fit: cover;
+                  }
+                  .about-card-item__image-description{
+                    left: 16px;
+                    font-size: 8px;
+                    padding: 8px;
+                    border-radius: 4px;
+                  }
+                }
+              }
+              .about-card-item__title{
+                font-size: 21px;
+                margin-bottom: 16px;
+                padding-top: 16px;
+              }
+              .about-card-item__desc{
+                font-size: 10px ;
+              }
+            }
+            &.campus{
+              .about-card-item__info{
+                .about-card-item__image{
+                  width: 180px;
+                  height: 121px;
+                }
+              }
+            }
+            &.academic{
+              .about-card-item__info{
+                padding-left: 10px;
+                padding-right: 10px;
+                .about-card-item__image{
+                  width: 166px;
+                  height: 121px;
+                  padding: 0 10px 10px 0;
+                  transform: translateX(-10px);
+                  margin-right: 0;
+                  .about-card-item__image-show{
+                    width: 100%;
+                    img{
+                      width: 100%;
+                      object-fit: cover;
+                    }
+                  }
+                  .about-card-item__image-description{
+                    width: auto;
+                    background: #661B1B;
+                  }
+                }
+              }
+            }
+            &.community{
+              .about-card-item__info{
+                .about-card-item__image{
+                  width: 160px;
+                  height: 290px;
+                  .about-card-item__image-description{
+                    left: -10px;
+                  }
+                }
+              }
+            }
+            &.admission{
+              .about-card-item__info{
+                .about-card-item__image{
+                  width: 180px;
+                  height: 121px;
+                  padding: 0 10px 10px 0;
+                  .about-card-item__image-description{
+                    left: 6px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 较小平板屏幕适配
+@media(min-width:576px) and (max-width:767.98px){
+
+}
+
+// 平板样式适配
+@media(min-width:768px) and (max-width:991.98px){
+
+}

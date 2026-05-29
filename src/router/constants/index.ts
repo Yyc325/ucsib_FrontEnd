@@ -1,11 +1,8 @@
-import layout from "./layout";
-import home from "./home";
+import foreground from "./foreground";
 import { noPermissionsRoutes } from "./canstants";
-import pages from "./pages";
+import backstage from "./backstage";
 export const ComponentCanstants = {
-  ...layout,
-  ...home,
   ...noPermissionsRoutes,
-  ...self,
-  ...pages,
+  ...foreground,
+  ...backstage,
 };

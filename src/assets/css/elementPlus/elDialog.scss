@@ -1,0 +1,25 @@
+.el-modal-dialog{
+  .el-overlay-dialog{
+    .el-dialog{
+      padding: 0;
+      .el-dialog__header{
+        display: flex;
+        align-items: center;
+        height: 46px;
+        padding: 0 16px;
+        border: 1px solid #F4F5F9;
+        .el-dialog__title{
+          font-size: 16px;
+          color: rgba(0,0,0,0.9);
+          line-height: 22px;
+        }
+      }
+      .el-dialog__body{
+        padding: 16px;
+      }
+      .el-dialog__footer{
+        padding: 0 16px 24px;
+      }
+    }
+  }
+}

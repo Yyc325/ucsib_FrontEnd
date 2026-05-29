@@ -1,0 +1,252 @@
+.about {
+  text-shadow: none;
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1500px;
+    margin: 0 auto;
+
+    .about-header {
+      width: 100%;
+      padding: 16px 0;
+      margin-bottom: 20px;
+      text-align: center;
+      .about-header-title {
+        font-size: 108px;
+        font-weight: bold;
+      }
+      .about-header-paragraph {
+        font-size: 32px;
+        color: #444;
+        margin-top: 32px;
+        margin-bottom: 32px;
+        line-height: 1.8;
+        text-align: center;
+        font-weight: 400;
+        letter-spacing: 1px;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .about-header-line {
+        display: block;
+        margin: 0 auto;
+        margin-top: 32px;
+        max-width: 1900px;  
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .about-body {
+      .about-card-list {
+        .about-card-item {
+          content: "";
+          display: table;
+          clear: both;
+          margin-bottom: 48px;
+          .about-card-item__info {
+            background: #F4F4F4;
+            height: 500px;
+            padding-left: 16px;
+            .about-card-item__image {
+              float: right;
+              height: 476px;
+              padding: 0 0 36px 48px;
+              background: #fff;
+              .about-card-item__image-show {
+                position: relative;
+                display: inline-block;
+                height: 100%;
+                border: 4px solid #000000;
+                border-radius: 8px;
+                background: #fff;
+                img {
+                  height: 100%;
+                  border-radius: 4px;
+                }
+                .about-card-item__image-description {
+                  position: absolute;
+                  bottom: 0;
+                  left: 100px;
+                  transform: translateY(50%);
+                  font-size: 26px;
+                  line-height: 1.4;
+                  padding: 20px;
+                  background: #661B1B;
+                  border-radius: 10px;
+                  color: #fff;
+                  cursor: pointer;
+                }
+              }
+            }
+            .about-card-item__title {
+              display: block;
+              font-size: 77px;
+              text-align: center;
+              margin-bottom: 40px;
+              padding-top: 40px;
+            }
+            .about-card-item__desc {
+              text-indent: 2em;
+              line-height: 1.4;
+              font-size: 27px;
+              word-break: break-word;
+              &::before {
+                display: inline-block;
+                content: "";
+                width: 2em;
+              }
+            }
+          }
+          &.campus {
+            .about-card-item__info {
+              padding-left: 0;
+              padding-right: 16px;
+              .about-card-item__image {
+                width: 624px;
+                float: left;
+                padding: 0 36px 36px 0;
+                margin-right: 16px;
+                .about-card-item__image-show {
+                  width: 100%;
+                  img {
+                    width: 100%;
+                    object-fit: cover;
+                  }
+                }
+                .about-card-item__image-description {
+                  width: auto;
+                  background: #1B3B66;
+                }
+              }
+            }
+          }
+          &.community {
+            .about-card-item__info {
+              padding-left: 0;
+              padding-right: 16px;
+              .about-card-item__image {
+                width: 500px;
+                float: left;
+                padding: 0 36px 36px 0;
+                margin-right: 16px;
+                .about-card-item__image-show {
+                  width: 100%;
+                  img {
+                    width: 100%;
+                    object-fit: cover;
+                  }
+                }
+                .about-card-item__image-description {
+                  width: auto;
+                  background: #1B3B66;
+                  left: 0px;
+                }
+              }
+            }
+          }
+          &.academic {
+            .about-card-item__info {
+              .about-card-item__image {
+                width: 624px;
+                height: 380px;
+                .about-card-item__image-show {
+                  width: 100%;
+                  img {
+                    width: 100%;
+                    object-fit: cover;
+                  }
+                }
+                .about-card-item__image-description {
+                  width: auto;
+                  background: #661B1B;
+                }
+              }
+            }
+          }
+          &.admission {
+            .about-card-item__info {
+              .about-card-item__image {
+                height: 380px;
+                width: 625px;
+                .about-card-item__image-show {
+                  width: 100%;
+                  img {
+                    width: 100%;
+                    object-fit: cover;
+                  }
+                }
+                .about-card-item__image-description {
+                  right: 80px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Team member section styles
+      .about-team-member {
+        margin-top: 64px;
+        .about-section__title {
+          font-size: 48px;
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 32px;
+        }
+        .about-section__content {
+          display: flex;
+          justify-content: center;
+          .member-cards {
+            display: flex;
+            gap: 50px 150px;
+            flex-wrap: wrap;
+            justify-content: center;
+            .member-card {
+              background: #fff;
+              border-radius: 16px;
+              box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+              padding: 60px 32px;
+              width: 400px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              .member-card__avatar {
+                width: 96px;
+                height: 96px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-bottom: 16px;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+              .member-card__info {
+                text-align: center;
+                .member-card__name {
+                  font-size: 24px;
+                  font-weight: 600;
+                  margin-bottom: 8px;
+                }
+                .member-card__title {
+                  font-size: 18px;
+                  color: #666;
+                  margin-bottom: 8px;
+                }
+                .member-card__desc {
+                  font-size: 16px;
+                  color: #888;
+                }
+              }
+              margin-bottom: 32px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

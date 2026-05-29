@@ -1,0 +1,80 @@
+#editor-root{
+    height: 100%;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+.ne-viewer{
+    margin: 0 48px;
+    .ne-viewer-body{
+        width: calc(100% - 324px);
+    }
+}
+/* 在线文件 */
+.i-online-file-container{
+    cursor: pointer;
+}
+.i-online-file-container .i-online-file-card{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #E7E9E8;
+    padding: 8px 24px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.i-online-file-container .i-online-file-card .i-online-file-toolbar{
+    position: absolute;
+    top: 40px;
+}
+/* 在线文件菜单项 */
+.i-online-file-menu{
+    display: flex;
+    align-items: center;
+}
+.i-online-file-menu .i-online-file-menu-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: pointer;
+}
+.i-online-file-menu .i-online-file-menu-item:hover{
+    background-color: #F4F5F5;
+}
+.i-online-file-menu .i-online-file-menu-item.is-active{
+    background-color: #F4F5F5;
+}
+.i-online-file-menu .i-online-file-menu-item.text-button{
+    display: flex;
+    align-items: center;
+    width: auto;
+    padding: 0 4px;
+}
+.i-online-file-menu .i-online-file-menu-item.text-button .i-online-file-menu-item-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+    cursor: pointer;
+}
+.i-online-file-item-line{
+    height: 16px;
+    border-right: 1px solid #E7E9E8;
+    margin: 0 4px;
+}
+/* 已分享文章 */
+.i-online-file-selector-item{
+    cursor: pointer;
+}
+
+/* 思维导图 */
+.mind-map-main{
+    width: 100%;
+    height: 386px;
+    border: 1px solid #E7E9E8;
+    border-radius: 8px;
+}

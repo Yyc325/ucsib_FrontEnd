@@ -1,11 +1,26 @@
-### Vue 3 + Vite
-
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### 项目框架
+- Vue3 + Vue Router + Vite + Element Plus + Pinia + Django
 
 ### 环境配置
 #### 安装vscode
-1. 可直接在![vscode官网](https://code.visualstudio.com/download)进行下载
+#### Node 环境搭建
+1. `node版本要求：>=16.0`
 
+#### 项目相关
+- 安装依赖包
+```cmd
+npm install 
+```
 
+- 启动项目
+```cmd
+npm run dev 
+```
+```cmd
+python manage.py runserver
+```
 
-### 
+- 打包命令
+```cmd
+npm run build 
+```

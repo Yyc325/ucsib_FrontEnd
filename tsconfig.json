@@ -50,7 +50,8 @@
         "lib": [
             "esnext",
             "dom"
-        ]
+        ],
+        "types": ["node"]
     },
     // 匹配检测文件
     "include": [

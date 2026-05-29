@@ -6,21 +6,25 @@ import store from "@/store";
 interface UserStore {
   token?: string | null;
   userInfo: any;
+  phone: any;
 }
 
 const ls = createLocalStorage();
-export const useUserStore = defineStore({
-  id: "app-user-store",
+export const useUserStore = defineStore( "app-user-store",{
   state: (): UserStore => ({
-    token: "",
-    userInfo: null,
+    token: ls.get("TOKEN") || "",
+    userInfo:ls.get("USER_INFO")|| null,
+    phone: ls.get("PHONE") || "",
   }),
   getters: {
     getToken(): string {
-      return this.token || ls.get("TOKEN");
+      return this.token || "";
     },
     getUserInfo(): any {
-      return this.userInfo || ls.get("USER_INFO");
+      return this.userInfo ;
+    },
+    getPhone(): any {
+      return this.phone;
     },
   },
   actions: {
@@ -32,6 +36,10 @@ export const useUserStore = defineStore({
     setUserInfo(info) {
       this.userInfo = info;
       ls.set("USER_INFO", info);
+    },
+    setPhone(phone: string) {
+      this.phone = phone;
+      ls.set("PHONE", phone);
     },
   },
 });

@@ -1,0 +1,104 @@
+
+// 手机样式适配
+@media(max-width:575.98px){
+  .alumni {
+    .alumni-header {
+      height: 240px;
+      .alumni-header-inner{
+        .alumni-header-title{
+          font-size: 48px;
+        }
+      }
+    }
+    .alumni-describe{
+      padding: 16px 32px;
+      .alumni-describe-inner{
+        font-size: 10px;
+        line-height: 16px;
+      }
+    }
+    .alumni-container{
+      .alumni-section{
+        .alumni-section-header{
+          font-size: 24px;
+          padding: 32px 0 24px;
+        }
+        .alumni-section-content{
+          .highlight{
+            margin-bottom: 0;
+            .highlight-trigger{
+              margin-bottom: 32px;
+              .highlight-trigger-select{
+                height: 18px;
+                .highlight-trigger-select__prefix{
+                  width: 32px;
+                }
+                .highlight-trigger-select__inner{
+                  width: 93px;
+                  font-size: 12px;
+                }
+              }
+            }
+            .highlight-display{
+              padding: 24px;
+              .highlight-display-inner{
+                grid-template-columns: 100%;
+                grid-gap: 48px;
+              }
+            }
+          }
+        }
+        &.alumni-voices{
+          .alumni-section-header{
+            .alumni-voices-title{
+              padding: 16px 64px;
+            }
+          }
+          .alumni-section-content{
+            .alumni-voice-list{
+              .alumni-voice-item-author{
+
+              }
+              .alumni-voice-item{
+                padding: 0 !important;
+                margin-bottom: 24px;
+                .alumni-voice-item-author{
+                  display:none;
+                }
+                .alumni-voice-item-content{
+                  transform: translateY(0);
+                  padding: 16px 24px;
+                  .alumni-voice-item-title{
+                    font-size:24px;
+                    padding: 0;
+                  }
+                  .alumni-voice-item-article{
+                    font-size: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .alumni-footer{
+      padding: 16px 24px;
+      .alumni-footer-section{
+        font-size: 12px;
+        line-height: 16px;
+        margin-right: 16px;
+        height: 120px;
+      }
+    }
+  }
+}
+// 较小平板屏幕适配
+@media(min-width:576px) and (max-width:767.98px){
+
+}
+// 平板样式适配
+@media(min-width:768px) and (max-width:991.98px){
+
+}

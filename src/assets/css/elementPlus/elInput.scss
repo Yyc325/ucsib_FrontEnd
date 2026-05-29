@@ -5,18 +5,18 @@
     padding: 1px 16px;
   }
   &__inner {
-    min-height: 40px;
+    min-height: 32px;
     border: none;
     box-shadow: none;
     height: 100%;
     line-height: inherit;
-    box-shadow: 0 0 0px 1000px #fff inset !important;
     &::-webkit-input-placeholder {
-      color: $textAssistColor;
+      color: #869096;
     }
-
-    &:focus {
-      background-color: $primaryColor;
+    &:focus,
+    &:hover{
+      border: none !important;
+      box-shadow: none !important;
     }
   }
 }

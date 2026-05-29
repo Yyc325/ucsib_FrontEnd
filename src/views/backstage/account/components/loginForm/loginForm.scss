@@ -1,0 +1,118 @@
+$h: 54px;
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 60px 0;
+  .form-header {
+    font-size: 48px;
+    color: #2c3e50;
+    margin-bottom: 72px;
+  }
+  .form-main {
+    width: 100%;
+    .account-form {
+      width: 100%;
+      ::v-deep(.el-form-item) {
+        margin-bottom: 0;
+
+        .el-form-item__error {
+          margin-top: 2px;
+          margin-left: 32px;
+        }
+        & ~ .el-form-item {
+          margin-top: 24px;
+        }
+        .el-input {
+          padding: 0;
+          border-radius: $h;
+          &__wrapper {
+            height: $h;
+            line-height: $h;
+            padding: 0 32px;
+            border-radius: $h;
+            background-color: #f3f5f5;
+            overflow: hidden;
+            transition: none;
+            &.is-focus {
+              box-shadow: none;
+            }
+            &:hover {
+              box-shadow: none;
+            }
+          }
+          &.auth-code-inp {
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            .el-input__wrapper {
+              padding-right: 140px;
+            }
+            .el-input-group__append {
+              position: absolute;
+              right: 0;
+              top: 0;
+              border: none;
+              box-shadow: none;
+              background-color: transparent;
+              z-index: 999;
+              div {
+                padding: 0;
+                width: 108px;
+                height: 32px !important;
+                text-align: center;
+                color: #fff;
+                font-size: 12px;
+                background-color: #2c3e50;
+                border-radius: 16px;
+                cursor: pointer;
+              }
+            }
+
+            &.active-code {
+              background-color: #2c3e50;
+
+              .el-input-group__append {
+                color: #fff;
+                background-color: #2c3e50;
+              }
+            }
+          }
+        }
+      }
+      &-sepline {
+        width: 100%;
+        border-bottom: 1px solid #e5e8ef;
+        margin-top: 48px;
+        margin-bottom: 16px;
+      }
+      &-func {
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 24px;
+      }
+      ::v-deep(.el-button) {
+        width: 100%;
+        border-radius: 28px;
+        height: 56px;
+        margin-top: 48px;
+      }
+      &-tip {
+        margin-top: 26px;
+      }
+    }
+  }
+}
+.el-button {
+  background-color: #2c3e50;
+}
+.sign {
+  color: #86909c;
+  cursor: pointer;
+}
+.sign-txt {
+  color: #0b55be;
+  cursor: pointer;
+}

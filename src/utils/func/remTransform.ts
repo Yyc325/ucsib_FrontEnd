@@ -25,7 +25,9 @@
     ) {
       ratio = screenRatio / (window.outerWidth / window.innerWidth);
     }
-    docEle.style.fontSize = (10 * (width / 1920)) / ratio + "px";
+    if(width>600){
+      docEle.style.fontSize = (16 * (width / 1920)) / ratio + "px";
+    }
 
     // }else if(macOperator.includes(platform) || platform.includes('Mac')){
     //   // const winWidth = window.innerWidth || document.body.clientWidth

@@ -1,0 +1,59 @@
+
+.i-card{
+  display: flex;
+  flex-direction: column;
+  background: rgba(217,217,217,0.45);
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+  border-radius: 0px 0px 0px 0px;
+  .i-card-cover{
+    width: 100%;
+    height: 267px;
+    overflow: hidden;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .i-card-content{
+    padding: 20px;
+    text-align: center;
+    .i-card-title{
+      font-weight: 600;
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    .i-card-desc{
+      font-size: 26px;
+      line-height: 32px;
+    }
+  }
+}
+
+// 手机样式适配
+@media(max-width:575.98px){
+  .i-card{
+    .i-card-cover{
+      height: 86px;
+    }
+    .i-card-content{
+      .i-card-title{
+        font-size: 18px;
+        margin-bottom: 8px;
+
+      }
+      .i-card-desc{
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+// 较小平板屏幕适配
+@media(min-width:576px) and (max-width:767.98px){
+
+}
+// 平板样式适配
+@media(min-width:768px) and (max-width:991.98px){
+
+}

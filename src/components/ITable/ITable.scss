@@ -1,0 +1,15 @@
+.i-table {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .base-table {
+    flex: 1;
+    height: 100% !important;
+    ::v-deep(.el-table__inner-wrapper) {
+      height: 100% !important;
+    }
+  }
+  .i-tabel-paging {
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,166 @@
+// 手机样式适配
+@media(max-width:575.98px){
+  .admission{
+    .admission-header{
+      height: 268px;
+      .admission-header-inner{
+        width: 80%;
+        height: 100%;
+        .admission-header-section{
+          .admission-header__title{
+            font-size: 48px;
+          }
+        }
+      }
+    }
+    .admission-center{
+      height: auto;
+      font-size: 12px;
+      line-height: 22px;
+      .admission-tip{
+        width: 100%;
+        padding: 24px;
+      }
+    }
+    .admission-section{
+      padding: 16px 24px;
+    }
+    .admission-forward{
+      .admission-forward-container{
+        height: 128px;
+        grid-template-columns: repeat( 2, calc(calc(100% - 16px) / 2));
+        grid-gap: 16px;
+        .admission-forward-section{
+          .admission-forward-tip{
+            bottom: 24px;
+            font-size: 14px;
+            line-height: 18px;
+            padding: 4px 0;
+            .admission-forward-tip__desc{
+              font-size: 10px;
+              line-height: 14px;
+            }
+          }
+        }
+      }
+    }
+    .admission-journey{
+      margin-bottom: 56px;
+      .admission-journey-container{
+        height: 126px;
+        padding: 0 16px;
+        .admission-journey-section{
+          .admission-journey-title{
+            font-size: 12px;
+            line-height: 14px;
+            padding:8px 0;
+          }
+          .admission-journey-desc{
+            font-size: 8px;
+            line-height: 14px;
+            margin-bottom: 28px;
+          }
+          .admission-journey-btn{
+            font-size: 12px;
+            padding: 8px 16px;
+            border-radius: 18px;
+          }
+          .admission-journey-model{
+            width: 170px;
+            height: 170px;
+            margin-left: 24px;
+            padding: 4px;
+            transform: translate(28px,24px);
+          }
+        }
+      }
+    }
+    .admission-content-section{
+      margin-bottom: 24px;
+      .admission-content-header{
+        font-size: 18px;
+        &.faq{
+          font-size: 24px;
+          color: #1A3A5E;
+          font-weight: 600;
+          margin-bottom: 8px;
+          font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Segoe UI';
+        }
+      }
+      .admission-content-body{
+        .preview-box{
+          padding: 0 16px;
+          .preview-box-inner{
+            height: 176px;
+          }
+        }
+        .application-guidelines{
+          padding: 16px;
+          border-radius: 16px;
+          .application-guidelines-inner{
+            line-height: 1.5;
+            padding: 16px;
+            .application-guidelines-title{
+              font-size: 14px;
+              margin-bottom: 8px;
+            }
+            .application-guidelines-content{
+              font-size: 10px;
+              margin-bottom: 8px;
+              span{
+                color: #7D8B8C;
+              }
+            }
+
+          }
+        }
+
+        :deep(.el-collapse) {
+          padding: 16px;
+          border-radius: 16px;
+          box-shadow: 0 4px 32px rgba(26,58,93,0.08);
+          .el-collapse-item {
+            overflow: hidden;
+            background: transparent;
+            margin-bottom: 8px;
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+          .el-collapse-item__header {
+            height: fit-content;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 12px 20px;
+            background: #F0F4FB;
+            color: #1a3a5d;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            overflow: hidden;
+            line-height: 1.5;
+          }
+          .el-collapse-item__wrap {
+            font-size: 16px;
+            padding: 16px 24px 20px 24px;
+            background: #fff;
+            color: #333;
+            border-radius: 0 0 8px 8px;
+            line-height: 1.5;
+            box-shadow: 0 2px 8px rgba(26,58,93,0.04);
+            .el-collapse-item__content{
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 较小平板屏幕适配
+@media(min-width:576px) and (max-width:767.98px){
+
+}
+// 平板样式适配
+@media(min-width:768px) and (max-width:991.98px){
+
+}

@@ -11,7 +11,7 @@ $primaryButtonColor: var(--primary-button-color, #1457dd);
  */
 
 // 主题色
-$systemThemeColor: var(--system-theme-color, #1664ff);
+$systemThemeColor: var(--system-theme-color, #2c3e50);
 
 // 主色
 $primaryColor: var(--primary-color, #ffffff);
@@ -59,7 +59,7 @@ $homeIconColor: var(--home-icon-color, #b6cef9);
 $shadowColor: var(--shadow-color, #00000019);
 
 // 根标签字体大小
-$rootFontSize: var(--root-font-size);
+$rootFontSize: var(--root-font-size,14px);
 
 // 背景色 -
 $bgInfoColor: var(--bg-info-color, #f3f3f3);

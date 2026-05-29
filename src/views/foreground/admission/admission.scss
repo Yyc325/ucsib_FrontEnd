@@ -1,0 +1,289 @@
+$contentWidth: 1440px;
+
+.admission {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .admission-header {
+    width: 100%;
+    height: 968px;
+    background: url("https://website.xycloud.net.cn/images/admission_header.png") no-repeat top center;
+    background-size: 100% auto;
+
+    .admission-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+
+      .admission-header-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #fff;
+        text-shadow: none;
+
+        .admission-header__title {
+          font-family: 'Impact', serif;
+          font-size: 110px;
+          line-height: 128px;
+          font-weight: 500;
+          margin-bottom: 24px;
+          letter-spacing: 4px;
+          color: rgba(255, 255, 255, 0.7);
+        }
+
+        .admission-header-more {
+          font-size: 38px;
+          padding: 8px 72px;
+          background-color: #05002e;
+          cursor: pointer;
+        }
+      }
+
+    }
+
+  }
+
+  .admission-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 220px;
+    color: #fff;
+    font-size: 28px;
+    line-height: 48px;
+    background-color: #00002D;
+
+    .admission-tip {
+      width: $contentWidth;
+    }
+  }
+
+  .admission-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 48px 72px;
+
+    .admission-section-container {
+      width: $contentWidth;
+      height: 462px;
+    }
+  }
+
+  .admission-forward {
+    .admission-forward-container {
+      display: grid;
+      grid-template-columns: repeat( 2, calc(calc(100% - 100px) / 2));
+      grid-gap: 100px;
+      .admission-forward-section {
+        flex: 1;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+
+        .admission-forward-tip {
+          position: absolute;
+          bottom: 96px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80%;
+          text-align: center;
+          background: rgba(0, 0, 0, .3);
+          padding: 16px 0;
+          font-size: 32px;
+          line-height: 48px;
+          color: #fff;
+          &:hover{
+            cursor: pointer;
+            text-decoration: underline;
+          }
+
+          .admission-forward-tip__title {
+          }
+
+          .admission-forward-tip__desc {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 28px;
+          }
+        }
+      }
+    }
+  }
+  .admission-journey{
+    background: #0C0831;
+    margin-bottom: 146px;
+    .admission-journey-container{
+      display: flex;
+      align-items: center;
+      padding: 0 96px;
+      .admission-journey-section{
+        color: #fff;
+        text-align: center;
+        .admission-journey-title{
+          font-size: 48px;
+          line-height: 64px;
+          padding: 24px 0;
+        }
+        .admission-journey-desc{
+          font-size: 24px;
+          line-height: 28px;
+          margin-bottom: 126px;
+        }
+        .admission-journey-btn{
+          display: inline-block;
+          width: auto;
+          font-size: 24px;
+          line-height: 1.5;
+          border: 1px solid #fff;
+          border-radius: 48px;
+          padding: 16px 64px;
+          cursor: pointer;
+          transition: all .3s;
+          &:hover{
+            transform: translateZ(4px) scale(1.1);
+            box-shadow: 0 0 8px 1px #fff;
+          }
+        }
+        .admission-journey-model{
+          margin-left: 146px;
+          width: 512px;
+          height: 512px;
+          padding: 10px;
+          border: 1px solid #202966;
+          border-radius: 50%;
+          transform: translate(66px,96px);
+          .admission-journey-model-outer{
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+            img{
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+  .admission-content-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 64px;
+    .admission-content-header{
+      font-size: 32px;
+      margin-bottom: 24px;
+      &.faq{
+        font-size: 48px;
+        color: #1A3A5E;
+        font-weight: 600;
+        font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Segoe UI';
+      }
+    }
+    .admission-content-body{
+      :deep(.el-collapse-item__wrap) {
+        font-size: 40px !important;      /* 根据需要调整大小（例如 36 / 40 / 48） */
+        line-height: 1.9 !important;
+        padding: 36px 48px 44px 48px !important;
+        color: #222 !important;
+      }
+
+      /* 如果 collapse 内容内部有 p、span 等，确保继承较大字号 */
+      :deep(.el-collapse-item__wrap) p,
+      :deep(.el-collapse-item__wrap) span,
+      :deep(.el-collapse-item__wrap) div {
+        font-size: 40px !important;
+        line-height: 1.9 !important;
+      }
+
+      /* 头部也可以放大（可选） */
+      :deep(.el-collapse-item__header) {
+        font-size: 36px !important;
+        padding: 26px 36px !important;
+      }
+      .application-guidelines{
+        width: 100%;
+        background:  #F7F8FA;
+        padding: 24px;
+        border-radius: 24px;
+        .application-guidelines-inner{
+          background: #fff;
+          padding: 24px;
+          border-radius: 8px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Segoe UI';
+          line-height: 2;
+          font-weight: 600;
+          color: #2C3F51;
+          .application-guidelines-title{
+            font-size: 36px;
+            margin-bottom: 24px;
+          }
+          .application-guidelines-content{
+            font-size: 25px;
+            margin-bottom: 16px;
+            span{
+              color: #7D8B8C;
+            }
+          }
+        }
+      }
+
+      :deep(.el-collapse) {
+        width: 100%;
+        font-size: 32px;
+        padding: 24px;
+        background: #F9FAFC;
+        border: none;
+        border-radius: 24px;
+        box-shadow: 0 4px 32px rgba(26,58,93,0.08);
+        .el-collapse-item {
+          overflow: hidden;
+          background: transparent;
+          margin-bottom: 8px;
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+        .el-collapse-item__header {
+          height: fit-content;
+          font-size: 32px;
+          font-weight: 700;
+          padding: 24px 42px;
+          background: #F0F4FB;
+          color: #1a3a5d;
+          border-radius: 24px 24px 0 0;
+          cursor: pointer;
+          overflow: hidden;
+        }
+        .el-collapse-item__wrap {
+          font-size: 32px;
+          padding: 32px 48px 40px 48px;
+          background: #fff;
+          color: #333;
+          border-radius: 0 0 24px 24px;
+          line-height: 1.5;
+          box-shadow: 0 2px 8px rgba(26,58,93,0.04);
+          .el-collapse-item__content{
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

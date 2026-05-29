@@ -1,0 +1,22 @@
+.article-display{
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 162px);
+  padding-top: 24px;
+  .article-display__content{
+    display: flex;
+    justify-content: center;
+    width: var(--container-width);
+    min-height: 100%;
+    .article-display__inner{
+      width: 976px;
+      .article-empty{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #86909c;
+      }
+    }
+  }
+}

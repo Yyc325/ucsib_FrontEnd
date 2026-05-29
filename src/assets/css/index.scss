@@ -1,4 +1,8 @@
-@import "./common/custom.scss";
-@import "./elementPlus/elButton.scss";
-@import "./elementPlus/elInput.scss";
-@import "./elementPlus/elPopover.scss";
+
+@forward "./common/custom.scss";
+@forward "./elementPlus/elButton.scss";
+@forward "./elementPlus/elInput.scss";
+@forward "./elementPlus/elPopover.scss";
+@forward "./elementPlus/elMessageBox.scss";
+@forward "./elementPlus/elDrawer.scss";
+@forward "./elementPlus/elDialog.scss";

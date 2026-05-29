@@ -1,0 +1,118 @@
+.home {
+  background: #fff;
+  .home_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .home_section {
+      .panel-collection {
+        .panel {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 1500px;
+          padding: 36px 0;
+          text-shadow: none;
+          h2 {
+            font-size: 58px;
+          }
+          p {
+            font-size: 38px;
+            line-height: 1.6;
+            text-indent: 2em;
+          }
+        }
+        #more-about-ucs {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 435px;
+          height: 60px;
+          background: #0441b1ad;
+          padding: 0;
+          cursor: pointer;
+          span {
+            font-size: 24px;
+            color: #fff;
+          }
+          .button, // 新增
+          span {
+            font-size: 23px; // 放大字体
+            color: #fff;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .activities-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: #000000;
+
+        &-right {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 54%;
+        }
+        .activities {
+          position: relative;
+
+          .info {
+            max-width: 90%;
+            padding: 10px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: fit-content;
+            cursor: pointer;
+            &:hover{
+              text-decoration: underline;
+              text-decoration-color: #fff;
+            }
+
+            .title {
+              font-size: 64px;
+              color: #fff;
+              font-weight: bold;
+            }
+            .desc {
+              font-size: 32px;
+              color: #fff;
+            }
+          }
+
+          &.activitie-1 {
+            width: 44%;
+            height: 850px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+
+            .info {
+              left: 0;
+            }
+          }
+          &.activitie-2 {
+            height: 385px;
+
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+          }
+          &.activitie-3 {
+            height: 436px;
+            // background: url("@/assets/images/layout/Halloween.png") no-repeat
+            //   center center / cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+          }
+        }
+      }
+    }
+  }
+}

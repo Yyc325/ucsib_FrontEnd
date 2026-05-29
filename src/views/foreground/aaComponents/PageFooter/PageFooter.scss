@@ -1,0 +1,104 @@
+.page-footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  background: #070707;
+  color: #fff;
+  .page-footer__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1500px;
+    height: 236px;
+    .page-footer-name{
+      font-size: 48px;
+      font-weight: 600;
+    }
+    .page-footer-quick{
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      .page-footer-quick-item{
+        cursor: pointer;
+      }
+      .spline{
+        height: 24px;
+        margin: 0 16px;
+        border-right: 1px solid #777777;
+      }
+    }
+    .page-footer-logo{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 105px;
+      .page-footer-logo__image{
+        width: 100%;
+        img{
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+      .page-footer-logo__title{
+        font-size: 32px;
+        margin-top: 16px;
+        color: #023B7F;
+        font-weight: 600;
+      }
+    }
+  }
+  .page-footer__record{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    img{
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+    a{
+      font-size: 12px;
+      line-height: 24px;
+      &:hover{
+        text-decoration: underline;
+        color: #1d2129;
+      }
+    }
+  }
+}
+
+// 手机样式适配
+@media(max-width:575.98px){
+  .page-footer{
+    .page-footer__inner{
+      width: 375px;
+      height: 146px;
+      .page-footer-name{
+        display: none;
+        font-size: 18px;
+      }
+      .page-footer-quick{
+        font-size: 12px;
+      }
+      .page-footer-logo{
+          width:36px;
+        .page-footer-logo__title{
+          font-size: 16px;
+          margin-top: 4px;
+        }
+      }
+    }
+
+  }
+}
+// 较小平板屏幕适配
+@media(min-width:576px) and (max-width:767.98px){
+
+}
+// 平板样式适配
+@media(min-width:768px) and (max-width:991.98px){
+
+}

@@ -1,0 +1,75 @@
+// 手机样式适配
+@media(max-width:575.98px){
+  .campus-life-section{
+    width: 100%;
+    .campus-life-section__header{
+      padding: 26px 0 16px;
+      &.dark {
+        width: 320px;
+        padding: 28px 16px;
+        background-color: #F9FAFB;
+      }
+      .campus-life-section__title{
+        font-size: 24px;
+      }
+      .campus-life-section__desc{
+        font-size: 14px;
+      }
+    }
+    .campus-life-section__content{
+      width: 100%;
+      img{
+        width: 100%;
+      }
+      .card-list{
+        flex-direction: column;
+        width:100%;
+        :deep(.i-card) {
+          flex: 1;
+          margin-right: 0;
+          margin-bottom: 24px;
+          .i-card-cover{
+            height: 236px;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+
+        }
+      }
+
+      .sport-fitness{
+        height: 246px;
+        margin-bottom: 56px;
+        .sport-fitness-box{
+          height: 120px;
+          padding: 12px;
+          .sport-fitness-box__inner{
+            .sport-fitness-box-title{
+              font-size: 14px;
+              margin-bottom:8px;
+            }
+            .sport-fitness-box-desc{
+              font-size: 12px;
+              line-height: 14px;
+
+            }
+          }
+        }
+        .sport-fitness-image{
+          width: 70%;
+          height:auto;
+        }
+      }
+
+    }
+  }
+}
+// 较小平板屏幕适配
+@media(min-width:576px) and (max-width:767.98px){
+
+}
+// 平板样式适配
+@media(min-width:768px) and (max-width:991.98px){
+
+}

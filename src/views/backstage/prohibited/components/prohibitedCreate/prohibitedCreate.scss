@@ -1,0 +1,21 @@
+.prohibited-create-body{
+  padding: 20px 14px 0;
+  :deep(.el-form){
+    .el-form-item{
+      margin-bottom: 24px;
+      &.is-required{
+        .el-form-item__label{
+          &::before{
+            display: none;
+          }
+          &::after{
+            color: var(--el-color-danger);
+            content: "*";
+            margin-left: 0.25rem;
+          }
+        }
+      }
+
+    }
+  }
+}

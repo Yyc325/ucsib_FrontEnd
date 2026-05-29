@@ -16,7 +16,6 @@ import {
   ContentTypeEnum,
 } from "@/utils/axios/types";
 import { useUser } from "@/hooks/useUser";
-import {loginOutHandle} from "@/views/Login/login";
 // 全局 api 配置信息
 const { VITE_GLOB_API_URL_PREFIX, VITE_GLOB_API_URL } = import.meta.env;
 const urlPrefix = VITE_GLOB_API_URL_PREFIX || "";
@@ -167,7 +166,6 @@ const transform: AxiosTransform = {
       if (!hasSuccess || !success) {
         if (status < 200 || (status > 300 && status !== 304)) {
           if (status === 401) {
-            loginOutHandle()
           }
 
           if (errorMessageMode === "modal") {

@@ -1,0 +1,30 @@
+.id-selection{
+  padding: 24px;
+  .id-selection-container{
+    .id-selection-title{
+      font-size: 24px;
+      margin-top: 48px;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+    .id-selection-list{
+      .id-selection-item{
+        display: flex;
+        align-items: center;
+        height: 86px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+        justify-content: space-between;
+        box-shadow: 0 0 10px 4px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition:all 0.3s;
+        font-size: 20px;
+        &:hover{
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}

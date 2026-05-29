@@ -1,0 +1,142 @@
+
+// 手机样式适配
+@media(max-width:575.98px){
+  .academics{
+    .academics-container{
+      width: 370px;
+      .academics-header{
+        border-width: 2px;
+        margin-bottom: 40px;
+        .academics-header-title{
+          font-size:  30px;
+        }
+      }
+      .academics-body{
+        width: 100%;
+        .academics-section{
+          margin-bottom: 24px !important;
+          .theme-tabs__inner{
+            padding: 10px 8px 32px !important;
+            .theme-tab__label{
+              width: auto !important;
+              font-size: 15px !important;
+            }
+          }
+          .academics-section__title{
+            font-size: 28px !important;
+            margin-bottom: 34px !important;
+          }
+          .academics-section__body{
+            .section-card{
+              width: 100%;
+              position: relative;
+              height:196px !important;
+              .section-card__content{
+                width: 273px !important;
+                height:100%;
+                padding: 20px 0 20px 64px !important;
+                .section-card__inner{
+                  .section-card__title{
+                    font-size: 16px !important;
+                    line-height: 18px !important;
+                    margin-bottom: 8px !important;
+                  }
+                  .section-card__desc{
+                    width: 140px !important;
+                    font-size: 12px !important;
+                    line-height: 16px !important;
+                    margin-bottom: 16px !important;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;  /* 垂直排列 */
+                    -webkit-line-clamp: 2;         /* 限制显示 3 行 */
+                    overflow: hidden;              /* 超出部分隐藏 */
+                    text-overflow: ellipsis;       /* 超出部分显示省略号 */
+
+                  }
+                  .section-card__link{
+                    span{
+                      color: #1a87f8;
+                      font-size: 16px !important;
+                      line-height: 18px !important;
+                      text-decoration: underline;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+              .section-card__preview{
+                width: 146px !important;
+                height: 116px !important;
+                img{
+                  height: 100%;
+                  object-fit: contain;
+                }
+              }
+              .section-card__preview1{
+                width: 146px !important;
+                height: 116px !important;
+                img{
+                  height: 100%;
+                  object-fit: contain;
+                }
+              }
+            }
+            .academics-section__article{
+
+              font-size: 14px;
+              line-height: 20px;
+              .image-cards{
+                width: 100%;
+              }
+            }
+          }
+
+          &.ibdp{
+            .academics-section__body{
+              .section-card{
+                .section-card__content{
+                  padding:20px 0 20px 32px !important;
+                }
+              }
+            }
+          }
+          .ibdp-core-box{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 226px !important;
+            padding: 16px !important;
+            .ibdp-core-node{
+              flex-shrink: 0;
+              width: 96px !important;
+              height: 32px !important;
+              border-radius: 32px;
+              background-color: #fff;
+              margin-bottom: 0 !important;
+              &.items-end{
+                align-self: flex-end;
+              }
+            }
+            .ibdp-core-text{
+              font-size: 12px !important;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              position: static !important;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+// 较小平板屏幕适配
+@media(min-width:576px) and (max-width:767.98px){
+
+}
+
+// 平板样式适配
+@media(min-width:768px) and (max-width:991.98px){
+
+}

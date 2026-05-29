@@ -1,0 +1,41 @@
+.notice{
+  height: 100%;
+  .notice-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .notice-search {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-between;
+
+      margin-bottom: 24px;
+      .notice-search-input {
+        display: flex;
+        .notice-search-btn{
+          display: flex;
+          margin-right: 16px;
+          .el-dropdown{
+            margin-left: 16px;
+          }
+        }
+        :deep(.el-input){
+          margin-right: 16px;
+          .el-input__wrapper{
+            &.is-focus{
+              .el-input__inner{
+                &:focus{
+                  background: #fff !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .notice-table {
+      flex: 1;
+      overflow: hidden;
+    }
+  }
+}

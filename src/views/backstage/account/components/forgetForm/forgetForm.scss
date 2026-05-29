@@ -1,0 +1,116 @@
+$h: 5.8vh;
+.forget {
+  display: flex;
+  justify-content: space-around;
+  &-container {
+    width: 27.4vw;
+    &-back {
+      padding-top: 6vh;
+      font-size: 1.72vh;
+      color: #2c3e50;
+      cursor: pointer;
+    }
+    &-main {
+      padding-top: 5vh;
+      .forget-form {
+        ::v-deep(.el-form-item) {
+          margin-bottom: 0;
+          .el-form-item__error {
+            margin-top: 2px;
+            margin-left: 1.66vw;
+          }
+          & ~ .el-form-item {
+            margin-top: 2.6vh;
+          }
+          .el-input {
+            padding: 0;
+            border-radius: 5.8vh;
+            &__wrapper {
+              height: $h;
+              line-height: $h;
+              padding: 0 1.66vw;
+              border-radius: 5.8vh;
+              background-color: #f3f5f5;
+              overflow: hidden;
+              transition: none;
+              &.is-focus {
+                box-shadow: none;
+              }
+              &:hover {
+                box-shadow: none;
+              }
+            }
+            &.auth-code-inp {
+              position: relative;
+              display: flex;
+              align-items: center;
+              overflow: hidden;
+              .el-input__wrapper {
+                padding-right: 7.2vw;
+              }
+              .el-input-group__append {
+                position: absolute;
+                right: 0;
+                top: 0;
+                border: none;
+                box-shadow: none;
+                background-color: transparent;
+                z-index: 999;
+                div {
+                  padding: 0;
+                  width: 5.625vw;
+                  height: 3.4vh !important;
+                  text-align: center;
+                  color: #fff;
+                  font-size: 1.3vh;
+                  background-color: #2c3e50;
+                  border-radius: 1.7vh;
+                  cursor: pointer;
+                }
+              }
+
+              &.active-code {
+                background-color: #2c3e50;
+
+                .el-input-group__append {
+                  color: #fff;
+                  background-color: #2c3e50;
+                }
+              }
+            }
+          }
+        }
+        ::v-deep(.el-button) {
+          width: 100%;
+          border-radius: 3vh;
+          height: 6vh;
+          margin-top: 2.58vh;
+        }
+        &-func {
+          margin-top: 1.8vh;
+          font-size: 1.5vh;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 1.25vw;
+        }
+      }
+    }
+  }
+}
+.sign {
+  color: #86909c;
+  cursor: pointer;
+
+  ::v-deep(.el-checkbox) {
+    .el-checkbox__label {
+      font-size: 13px;
+    }
+  }
+  &-txt {
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    cursor: pointer;
+  }
+}
