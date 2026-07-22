@@ -51,10 +51,6 @@ export default defineComponent({
           label: t('idSelection.teacher'),
           type: 'teacher'
         },
-        {
-          label: t('idSelection.parent'),
-          type: 'parent'
-        }
       ]
     })
     const state = reactive({

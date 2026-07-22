@@ -33,3 +33,10 @@ export const admin_login = (data: { phone: string; password: string }) => {
     data,
   });
 };
+
+export const get_current_account = () => {
+  return Axios.request<any>({
+    url: "/api/admin_role/account/me",
+    method: "GET",
+  });
+};

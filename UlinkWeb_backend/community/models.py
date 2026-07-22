@@ -9,3 +9,8 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"<Comment {self.id}>"
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['-created_at'], name='comment_created_idx'),
+        ]

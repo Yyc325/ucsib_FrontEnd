@@ -19,7 +19,7 @@
                   <template #dropdown>
                     <el-dropdown-menu>
                       <el-dropdown-item @click="editNotice">{{ t('operator.edit') }}</el-dropdown-item>
-                      <el-dropdown-item @click="handleDelete">{{ t('operator.delete') }}</el-dropdown-item>
+                      <el-dropdown-item v-if="canDelete" @click="handleDelete">{{ t('operator.delete') }}</el-dropdown-item>
                       <el-dropdown-item @click="revokeNotice">{{ t('operator.revoke') }}</el-dropdown-item>
                     </el-dropdown-menu>
                   </template>
@@ -43,7 +43,7 @@
   </ISkeleton>
 </template>
 <script lang="ts">
-import {defineComponent, h, onMounted, reactive, ref, toRefs} from "vue";
+import {computed, defineComponent, h, onMounted, reactive, ref, toRefs} from "vue";
 import ISkeleton from "@/components/ISkeleton/ISkeleton.vue";
 import ITable from "@/components/ITable/ITable.vue";
 import {useI18n} from "vue-i18n";
@@ -53,6 +53,7 @@ import DisplayPosition from "@/views/backstage/notice/components/displayPosition
 import {ElMessage, ElMessageBox} from "element-plus";
 import {deleteNotice, publishNoticeById, queryNotice, revokeNoticeById} from "@/apis/backstage/notice";
 import moment from "moment";
+import {useUser} from "@/hooks/useUser";
 
 export default defineComponent({
   name: 'notice',
@@ -65,6 +66,8 @@ export default defineComponent({
   },
   setup() {
     const {t} = useI18n();
+    const {getUserInfo} = useUser();
+    const canDelete = computed(() => getUserInfo.value?.identity === 'admin')
 
     const addNoticeRef = ref()
     const displayPositionRef = ref()
@@ -271,6 +274,7 @@ export default defineComponent({
     })
     return {
       t,
+      canDelete,
       addNoticeRef,
       displayPositionRef,
       ...toRefs(state),

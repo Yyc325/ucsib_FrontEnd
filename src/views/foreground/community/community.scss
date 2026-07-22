@@ -215,6 +215,20 @@
                   height: 100%;
                   font-size: 16px;
                   color: #fff;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: flex-start;
+                  min-width: 0;
+                  span{
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                  }
+                  small{
+                    font-size: 12px;
+                    opacity: 0.8;
+                  }
                   &::after{
                     position: absolute;
                     bottom: 0;
@@ -237,6 +251,15 @@
                 -webkit-box-orient: vertical;
                 overflow: hidden;
               }
+            }
+            .comment-empty{
+              position: absolute;
+              inset: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #667085;
+              font-size: 18px;
             }
           }
           .comment-input{
@@ -268,6 +291,14 @@
                     display: none;
                   }
                 }
+              }
+            }
+            .comment-input-footer{
+              display: flex;
+              justify-content: flex-end;
+              margin-top: 20px;
+              .el-button{
+                min-width: 112px;
               }
             }
           }

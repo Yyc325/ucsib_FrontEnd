@@ -80,7 +80,11 @@ const state = reactive({
 const { background } = toRefs(state);
 
 const menuList = computed(() => {
-	return backstageRoutes[0].children
+	const role = getUserInfo.value?.identity
+	return backstageRoutes[0].children?.filter((route) => {
+		const permissions = route.meta.permissions
+		return !permissions?.length || permissions.includes(role)
+	}) || []
 })
 const menuSelect = (route: AppRouteRecordRaw) => {
 	const { redirect, name } = route

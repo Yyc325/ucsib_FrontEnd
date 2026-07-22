@@ -8,6 +8,7 @@ const backstageRoutes = [
   {
     path: "/backstage",
     name: "Backstage",
+    redirect: "/backstage/notice",
     component: ComponentCanstants["BACKSTAGE_LAYOUT"],
     meta: {
       title: "后台管理",
@@ -20,6 +21,7 @@ const backstageRoutes = [
         meta: {
           title: "用户管理",
           description: "用于管理所用用户信息",
+          permissions: ["admin"],
         },
       },
       {
@@ -29,6 +31,7 @@ const backstageRoutes = [
         meta: {
           title: "UCS IB 公告",
           description: "更多文化宣传，实时推送各类信息",
+          permissions: ["admin", "teacher"],
         },
       },
       {
@@ -38,6 +41,7 @@ const backstageRoutes = [
         meta: {
           title: "UCS IB 评论",
           description: "用于管理用户评论信息",
+          permissions: ["admin"],
         },
       },
     ],

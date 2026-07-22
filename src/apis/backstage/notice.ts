@@ -33,7 +33,9 @@ export const queryNotice = (data:{phone:string,publisher:string})=>{
  * @date: 2025/7/30
  * */
 
-export const deleteNotice = (data:{id:string})=>{
+type NoticeIdSelection = string | number | Array<string | number>
+
+export const deleteNotice = (data:{id:NoticeIdSelection})=>{
     return Axios.request({
         url:'/api/admin_role/notices/delete',
         method:"POST",
@@ -59,7 +61,7 @@ export const updateNotice = (data:NoticeItem)=>{
  * @date: 2025/7/30
  * */
 
-export const revokeNoticeById = (data: { id:string })=>{
+export const revokeNoticeById = (data: { id:NoticeIdSelection })=>{
     return Axios.request({
         url:'/api/admin_role/notices/withdraw',
         method:"POST",
@@ -72,7 +74,7 @@ export const revokeNoticeById = (data: { id:string })=>{
  * @date: 2025/7/30
  * */
 
-export const publishNoticeById = (data: { id:string })=>{
+export const publishNoticeById = (data: { id:NoticeIdSelection })=>{
     return Axios.request({
         url:'/api/admin_role/notices/publish',
         method:"POST",

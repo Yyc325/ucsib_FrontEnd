@@ -1,0 +1,20 @@
+digraph MobileResponsiveFlow {
+  graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.35", ranksep="0.42"];
+  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=11, color="#344054", fillcolor="#F8FAFC", margin="0.14,0.08"];
+  edge [fontname="Arial", fontsize=10, color="#475467"];
+
+  start [label="Load page", shape=oval, fillcolor="#E8EEF7"];
+  check [label="Viewport width <= 575.98 px?", shape=diamond, fillcolor="#FFF4D6"];
+  desktop [label="Use desktop layout", fillcolor="#E8EEF7"];
+  hide [label="Hide full navigation, search and\nnon-essential decorative panels"];
+  menu [label="Show collapsible mobile menu"];
+  width [label="Set main containers to full width"];
+  stack [label="Stack or simplify multi-column content"];
+  resize [label="Resize text, images and input areas"];
+  mobile [label="Render mobile layout", shape=oval, fillcolor="#DFF3EA"];
+
+  start -> check;
+  check -> desktop [label="No"];
+  check -> hide [label="Yes"];
+  hide -> menu -> width -> stack -> resize -> mobile;
+}

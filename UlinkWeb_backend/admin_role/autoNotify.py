@@ -2,8 +2,7 @@ import logging
 import threading
 import time
 from django.db import OperationalError, ProgrammingError
-from django.utils import timezone
-from admin_role.models import Notice
+from admin_role import service
 
 logger = logging.getLogger(__name__)
 
@@ -12,14 +11,9 @@ def check_publish_notices():
     """定期检查并发布到期的通知"""
     while True:
         try:
-            now = timezone.now()
-            # 获取所有待发布且发布时间已到的通知
-            notices = Notice.objects.filter(status='待发布', publish_time__lte=now)
-
-            # 更新这些通知的状态为已发布
-            for notice in notices:
-                notice.status = '已发布'
-                notice.save()
+            published_count = service.publish_due_notices()
+            if published_count:
+                logger.info('Auto-published %s due notice(s)', published_count)
         except (ProgrammingError, OperationalError) as exc:
             logger.warning("Auto publish skipped: %s", exc)
 

@@ -108,9 +108,10 @@ const login = () => {
 				password: loginForm.value.password
 			}).then((res: any) => {
 				if (res.status === "success") {
-					const { setToken, setPhone } = useUser()
+					const { setToken, setPhone, setUserInfo } = useUser()
 					setToken(res.token)
 					setPhone(loginForm.value.account)
+					setUserInfo(res.user_info)
 					router.push({
 						name: "Home"
 					})

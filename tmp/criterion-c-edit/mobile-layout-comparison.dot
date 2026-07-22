@@ -1,0 +1,26 @@
+digraph ResponsiveLayoutComparison {
+  graph [rankdir=LR, bgcolor="white", pad="0.25", nodesep="0.55", ranksep="0.8"];
+  node [shape=plain, fontname="Arial"];
+
+  desktop [label=<
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#344054">
+      <TR><TD BGCOLOR="#E8EEF7"><B>Desktop layout (width &gt; 575.98 px)</B></TD></TR>
+      <TR><TD>Brand | Full navigation | Search</TD></TR>
+      <TR><TD HEIGHT="58">Featured content | Main content</TD></TR>
+      <TR><TD>Decorative panel | Primary form</TD></TR>
+      <TR><TD BGCOLOR="#F5F7FA">Footer</TD></TR>
+    </TABLE>
+  >];
+
+  mobile [label=<
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#344054">
+      <TR><TD BGCOLOR="#DFF3EA"><B>Mobile layout (width &lt;= 575.98 px)</B></TD></TR>
+      <TR><TD>Brand | Collapsible menu icon</TD></TR>
+      <TR><TD HEIGHT="58">Primary content at full width</TD></TR>
+      <TR><TD>Single-column form or content</TD></TR>
+      <TR><TD BGCOLOR="#F5F7FA">Footer</TD></TR>
+    </TABLE>
+  >];
+
+  desktop -> mobile [label="CSS media query", fontname="Arial", color="#667085", fontcolor="#475467"];
+}

@@ -1,6 +1,8 @@
 // 手机样式适配
 @media(max-width:575.98px){
   .community{
+    width: 100%;
+    overflow-x: hidden;
     .community-main{
       .community-header{
         height: 240px;
@@ -10,6 +12,7 @@
             display: none;
           }
           &.right{
+           width: 100%;
            .community-header-cover{
              display: flex;
              align-items: center;
@@ -32,17 +35,25 @@
           }
           .community-section-content{
             .club-photo-wall{
+              width: 100% !important;
+              max-width: 100% !important;
+              box-sizing: border-box;
               flex-direction: column-reverse;
               height: fit-content;
               .club-photo-wall-section{
 
                 &.info{
-                  width: 100%;
+                  width: 100% !important;
+                  max-width: 100% !important;
+                  box-sizing: border-box;
                   padding:24px;
                   .club-photo-wall-intro{
+                    width: 100%;
+                    box-sizing: border-box;
                     font-size: 16px;
                     line-height: 28px;
-                    padding:0 48px;
+                    padding:0 16px;
+                    overflow-wrap: anywhere;
                   }
                   .club-photo-wall-more{
                     font-size: 16px;
@@ -52,7 +63,9 @@
                   }
                 }
                 &.photos{
-                  width: 100%;
+                  width: 100% !important;
+                  max-width: 100% !important;
+                  box-sizing: border-box;
                   height: auto;
                   grid-template-columns:repeat(3,calc(100% / 3));
                   grid-template-rows: repeat(3, 72px);
@@ -98,6 +111,7 @@
                 padding: 0 16px;
                 .club-item{
                   width: calc(100% / 2);
+                  box-sizing: border-box;
                   font-size: 10px;
                   line-height: 14px;
                 }
@@ -105,15 +119,27 @@
             }
             .community-section-comment{
               .comment-display{
-                scale: 0.22;
-                height: 186px;
-                transform-origin: 0 0;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 16px;
+                height: auto;
+                min-height: 160px;
+                padding: 16px 0;
+                margin-bottom: 16px;
                 .comment-display-card{
+                  position: relative !important;
+                  top: auto !important;
+                  left: auto !important;
+                  width: 100% !important;
+                  height: 160px !important;
+                  rotate: 0deg !important;
+                  padding: 24px;
                 }
               }
               .comment-input{
                 padding: 24px 32px;
-                height: 186px;
+                height: 240px;
+                margin-bottom: 48px;
                 .comment-input-tip{
                   font-size: 14px;
                 }
@@ -132,6 +158,9 @@
                       }
                     }
                   }
+                }
+                .comment-input-footer{
+                  margin-top: 12px;
                 }
               }
             }

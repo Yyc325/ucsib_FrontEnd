@@ -17,8 +17,11 @@
 // 手机样式适配
 @media(max-width:575.98px){
   .content-layout{
+    width: 100%;
     .content-layout-container{
-      width: 375px;
+      width: 100%;
+      padding: 0 16px;
+      box-sizing: border-box;
     }
   }
 }

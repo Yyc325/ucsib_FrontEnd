@@ -1,21 +1,49 @@
 from django.db import models
+
+
 class Admin(models.Model):
+    ROLE_ADMIN = 'admin'
+    ROLE_TEACHER = 'teacher'
+    ROLE_STUDENT = 'student'
+    ROLE_CHOICES = [
+        (ROLE_ADMIN, 'Administrator'),
+        (ROLE_TEACHER, 'Teacher'),
+        (ROLE_STUDENT, 'Student'),
+    ]
+
     id = models.AutoField(primary_key=True)
     user_name = models.CharField(max_length=255)
     real_name = models.CharField(max_length=255)
     phone = models.CharField(max_length=20, unique=True)
     password = models.CharField(max_length=255)
-    identity = models.CharField(max_length=255)
+    identity = models.CharField(
+        max_length=20,
+        choices=ROLE_CHOICES,
+        default=ROLE_STUDENT,
+    )
     create_time = models.DateTimeField(auto_now=True)
     update_time = models.DateTimeField(auto_now=True)
 # Create your models here.
 
 class Notice(models.Model):
+    STATUS_PENDING = '待发布'
+    STATUS_PUBLISHED = '已发布'
+    STATUS_WITHDRAWN = '已撤回'
+    STATUS_CHOICES = [
+        (STATUS_PENDING, 'Pending'),
+        (STATUS_PUBLISHED, 'Published'),
+        (STATUS_WITHDRAWN, 'Withdrawn'),
+    ]
+
     title = models.CharField(max_length=255)
     subtitle = models.CharField(max_length=255)
     content = models.TextField()
     publisher = models.CharField(max_length=255)
-    status = models.CharField(max_length=255)
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default=STATUS_PENDING,
+    )
     publish_time = models.DateTimeField(null=True, blank=True)
     create_time = models.DateTimeField(auto_now_add=True)
     # cover = models.CharField(max_length=255)
@@ -27,4 +55,7 @@ class Notice(models.Model):
 
     class Meta:
         db_table = 'admin_notice_copy1'  # 指定数据库表
-
+        indexes = [
+            models.Index(fields=['status', 'publish_time'], name='notice_due_idx'),
+            models.Index(fields=['status', 'publish_location'], name='notice_location_idx'),
+        ]

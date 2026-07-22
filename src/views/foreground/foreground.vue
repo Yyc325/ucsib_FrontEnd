@@ -89,10 +89,26 @@
                   </div>
                   <div class="collapse-menu__content" :class="{'is-active':collapseVisible}">
                     <ul class="collapse-menu-list">
-                      <!--                      暂时将空白页隐藏  @click="jumpTo(item.name)"-->
+                      <li class="menu-item" v-for="item in primaryNavs" :key="item.name" @click="jumpTo(item.name)">
+                        {{ item.label }}
+                      </li>
                       <li class="menu-item" v-for="item in barMenu" :key="item.name" @click="jumpTo(item.name)">
                         {{ item.label }}
                       </li>
+                      <li class="menu-item" @click="searchTrigger">{{ $t("header.search") }}</li>
+                      <li class="menu-item" @click="switchLanguage({label: '简体中文', value: 'zh'})">简体中文</li>
+                      <li class="menu-item" @click="switchLanguage({label: 'English', value: 'en'})">English</li>
+                      <template v-if="getUserInfo && getUserInfo.user_name">
+                        <li
+                          class="menu-item"
+                          v-for="entrance in entrances"
+                          :key="entrance.value"
+                          @click="entranceHandler(entrance)"
+                        >
+                          {{ entrance.label }}
+                        </li>
+                      </template>
+                      <li v-else class="menu-item" @click="jumpTo('Login')">{{ $t("header.login") }}</li>
                     </ul>
                   </div>
                 </div>

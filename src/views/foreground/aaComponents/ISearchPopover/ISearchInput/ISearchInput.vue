@@ -1,54 +1,101 @@
 <template>
-  <el-popover :visible="searchObj.visible" trigger="click" placement="bottom" :offset="40"
-              width="60%">
+  <el-popover
+    :visible="searchObj.visible"
+    trigger="click"
+    placement="bottom"
+    :offset="40"
+    width="60%"
+  >
     <template #reference>
-      <el-input ref="searchInputRef" v-model="searchObj.keyword"
-                @blur="inputBlur"
-                @focus="inputFocus"
-                placeholder="What are you looking for？"
-                clearable>
+      <el-input
+        ref="searchInputRef"
+        v-model="searchObj.keyword"
+        @blur="inputBlur"
+        @focus="inputFocus"
+        placeholder="What are you looking for?"
+        clearable
+      >
         <template #prefix>
           <div class="i-input-icon flex align-center h-6">
-            <img class="h-full object-cover" src="../../../../../assets/images/search/searchInput.png" alt="">
+            <img
+              class="h-full object-cover"
+              src="../../../../../assets/images/search/searchInput.png"
+              alt=""
+            >
           </div>
         </template>
       </el-input>
     </template>
+
     <template #default>
       <div class="flex flex-col w-full">
-        <div class="flex-shrink-0 relative min-h-16 max-h-48 p-4 pl-12" v-if="!searchObj.keyword &&getHistory.length">
+        <div
+          v-if="!searchObj.keyword && getHistory.length"
+          class="flex-shrink-0 relative min-h-16 max-h-48 p-4 pl-12"
+        >
           <div class="absolute left-4 top-4 h-4 w-4">
-            <img class="h-full object-cover" src="../../../../../assets/images/search/searchHistory.png" alt="">
+            <img
+              class="h-full object-cover"
+              src="../../../../../assets/images/search/searchHistory.png"
+              alt=""
+            >
           </div>
           <div class="grid grid-cols-5 gap-6">
             <div
+              v-for="history in getHistory"
+              :key="history.id"
               class="h-8 flex items-center bg-history-bg rounded-2xl p-2 cursor-pointer hover:scale-105 transition-all"
-              v-for="history in getHistory" :key="history.id" @click="selectHistory(history)">
+              @mousedown.prevent="selectHistory(history)"
+            >
               <i class="iconfont icon-searchhistory text-2xl mr-2"></i>
               <span class="leading-8 translate-y-0.5 truncate">{{ history.content }}</span>
             </div>
           </div>
         </div>
-        <div class="search-result-list w-full flex-1 max-h-80 overflow-auto overscroll-none"
-             v-else-if="searchObj.keyword">
-          <template v-if="searchResult.length">
-            <div class="search-result-item cursor-pointer flex justify-between text-lg font-normal odd:bg-gray-100 p-4"
-                 v-for="(result,index) in searchResult"
-                 :key="result.id" @click="goSearchPage(result)">
-              <div class="flex items-center">
-                <div class="w-4 h-4 mr-4">
-                  <img class="h-full object-cover" src="../../../../../assets/images/search/searchResult.png" alt="">
+
+        <div v-else-if="searchObj.keyword" class="search-result-list w-full flex-1 max-h-96 overflow-auto overscroll-none">
+          <div class="flex justify-end px-4 py-2">
+            <el-radio-group v-model="searchObj.scope" size="small">
+              <el-radio-button label="All" value="all" />
+              <el-radio-button label="News" value="notices" />
+              <el-radio-button label="Community" value="community" />
+            </el-radio-group>
+          </div>
+
+          <div v-loading="searchObj.loading" class="min-h-16">
+            <template v-if="searchResult.length">
+              <div
+                v-for="result in searchResult"
+                :key="result.id"
+                class="search-result-item cursor-pointer flex justify-between text-base font-normal odd:bg-gray-100 p-4"
+                @mousedown.prevent="goSearchPage(result)"
+              >
+                <div class="flex min-w-0">
+                  <div class="w-4 h-4 mr-4 mt-1 flex-shrink-0">
+                    <img
+                      class="h-full object-cover"
+                      src="../../../../../assets/images/search/searchResult.png"
+                      alt=""
+                    >
+                  </div>
+                  <div class="min-w-0">
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-slate-500">{{ sourceLabel(result.source) }}</span>
+                      <span class="hover:text-blue-950" v-html="result.displayTitle"></span>
+                    </div>
+                    <div class="text-sm text-slate-500 truncate mt-1" v-html="result.displaySnippet"></div>
+                  </div>
                 </div>
-                <span class=" hover:text-blue-950" v-html="result.displayContent"></span>
+                <div class="rotate-315 flex-shrink-0 ml-4">
+                  <i class="iconfont icon-goto"></i>
+                </div>
               </div>
-              <div class="rotate-315">
-                <i class="iconfont icon-goto"></i>
-              </div>
-            </div>
-          </template>
-          <div class="search-result-empty flex items-center justify-center text-slate-500 h-16 p-4" v-else>
-            <div class="search-result-empty-tip">
-              暂无相关数据
+            </template>
+            <div
+              v-else-if="!searchObj.loading"
+              class="search-result-empty flex items-center justify-center text-slate-500 h-16 p-4"
+            >
+              No results found
             </div>
           </div>
         </div>
@@ -56,88 +103,109 @@
     </template>
   </el-popover>
 </template>
+
 <script lang="ts">
-import {defineComponent, nextTick, onMounted, PropType, reactive, ref, toRefs, watch} from 'vue'
+import {defineComponent, onBeforeUnmount, onMounted, reactive, ref, toRefs, watch} from 'vue'
 import {useSearchHistory} from "@/hooks/useSearchHistory";
 import {nanoid} from "nanoid";
 import {router} from "@/router";
 import _ from "lodash";
 import {HistoryRecord} from "@/store/modules/search_history";
 import IntelligentHighlighter from "@/utils/tools/intelligentHighlighter";
+import {SearchResult, searchSite} from "@/apis/foreground";
+import {useArticle} from "@/hooks/useArticle";
+
+type DisplaySearchResult = SearchResult & {
+  displayTitle: string;
+  displaySnippet: string;
+}
 
 export default defineComponent({
   name: "ISearchInput",
-  props: {
-    disabled: {
-      type: Boolean as PropType<boolean>,
-      default: true
-    },
-  },
   emits: ['closePopover'],
-  setup(props, {emit, expose}) {
+  setup(_props, {emit}) {
     const {getHistory, pushHistory} = useSearchHistory()
+    const {setCurrentArticle} = useArticle()
     const searchInputRef = ref<any>()
+    let activeRequest = 0
+
     const state = reactive({
       searchObj: {
         visible: false,
-        keyword: ""
+        keyword: "",
+        scope: "all",
+        loading: false,
       },
-      searchResult: [] as any[]
+      searchResult: [] as DisplaySearchResult[],
     })
-    watch(() => state.searchObj.keyword, _.debounce((val: string) => {
-        !state.searchObj.visible &&(state.searchObj.visible = true)
-        state.searchResult = [
-          {
-            id: nanoid(),
-            title: 'What is the IB Diploma Programme and what is its educational philosophy?'
-          },
-          {
-            id: nanoid(),
-            title: 'As a parent, how can I best support my child through the IB Diploma programme?'
-          },
-          {
-            id: nanoid(),
-            title: 'What are the costs associated with taking the IB Diploma programme?'
-          },
-          {
-            id: nanoid(),
-            title: 'How is the total IB Diploma programme score of 45 points calculated?'
-          },
-          {
-            id: nanoid(),
-            title: 'How can I effectively manage my time and stress during the IB Diploma programme ?'
-          },
-        ].map((vm: any) => {
-          vm.displayContent = highlightKeywords(vm.title, val)
-          return vm
-        })
-      },
-      300
-    ))
-    const goSearchPage = (item: any) => {
+
+    const executeSearch = _.debounce(async () => {
+      const keyword = state.searchObj.keyword.trim()
+      const requestId = ++activeRequest
+      if (!keyword) {
+        state.searchResult = []
+        state.searchObj.loading = false
+        return
+      }
+
+      state.searchObj.visible = true
+      state.searchObj.loading = true
+      try {
+        const response = await searchSite(keyword, state.searchObj.scope)
+        if (requestId !== activeRequest) return
+        const results = response.status === 'success' ? response.data.results : []
+        state.searchResult = results.map((result: SearchResult) => ({
+          ...result,
+          displayTitle: highlightKeywords(escapeHtml(result.title), keyword),
+          displaySnippet: highlightKeywords(escapeHtml(result.snippet), keyword),
+        }))
+      } catch (_error) {
+        if (requestId === activeRequest) state.searchResult = []
+      } finally {
+        if (requestId === activeRequest) state.searchObj.loading = false
+      }
+    }, 300)
+
+    watch(
+      () => [state.searchObj.keyword, state.searchObj.scope],
+      () => executeSearch(),
+    )
+
+    const goSearchPage = (item: DisplaySearchResult) => {
       pushHistory({
         id: nanoid(8),
-        content: item.title,
-        createTime: new Date()
+        content: state.searchObj.keyword.trim(),
+        createTime: new Date(),
       })
-      // router.push({
-      //   name: 'Search',
-      //   query: {
-      //     keyword: state.searchObj.keyword
-      //   }
-      // })
+      if (item.source === 'notice' && item.article) {
+        setCurrentArticle(item.article)
+        router.push({name: 'Article'})
+      } else {
+        router.push({name: 'Community'})
+      }
+      state.searchObj.visible = false
       emit('closePopover')
     }
 
-    function highlightKeywords(text: string, keywords: string | string[], caseSensitive = true) {
-      const highlighter = new IntelligentHighlighter({
+    function escapeHtml(text: string) {
+      return (text || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;')
+    }
+
+    function highlightKeywords(text: string, keywords: string) {
+      return new IntelligentHighlighter({
         highlightTag: 'span',
         highlightClass: 'underline text-search-color',
-        caseSensitive: false
-      });
-      const result = highlighter.highlight(text, keywords)
-      return result;
+        caseSensitive: false,
+      }).highlight(text, keywords)
+    }
 
+    const sourceLabel = (source: SearchResult['source']) => {
+      return source === 'notice' ? 'News' : 'Community'
     }
 
     const selectHistory = (history: HistoryRecord) => {
@@ -150,9 +218,10 @@ export default defineComponent({
     const inputFocus = () => {
       state.searchObj.visible = true
     }
-    onMounted(() => {
-      searchInputRef.value?.focus()
-    })
+
+    onMounted(() => searchInputRef.value?.focus())
+    onBeforeUnmount(() => executeSearch.cancel())
+
     return {
       getHistory,
       searchInputRef,
@@ -160,9 +229,10 @@ export default defineComponent({
       inputBlur,
       inputFocus,
       goSearchPage,
-      selectHistory
+      selectHistory,
+      sourceLabel,
     }
-  }
+  },
 })
 </script>
 
